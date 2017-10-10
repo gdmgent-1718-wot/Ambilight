@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Colorpicker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- colorpicker element -->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Colorpicker</a>
+        </div>
+    </nav>
+    <div class="colorpicker container ">
+        <div class="row card valign-wrapper">
+            <canvas class="col s12 m4" id="picker" var="1" width="300" height="300"></canvas>
+            <div class="controls col s12 m6">
+                <form>
+                    <p class="col s6">Red</p>
+                    <input class="col s3 offset-s3" type="number" id="rNum" min="0" max="255"><br>
+                    <input class="col s12" type="range" id="rVal" name="points" min="0" max="255">
+                    <p class="col s6">Green</p>
+                    <input class="col s3 offset-s3" type="number" id="gNum" min="0" max="255"><br>
+                    <input class="col s12" type="range" id="gVal" name="points" min="0" max="255">
+                    <p class="col s6">Blue</p>
+                    <input class="col s3 offset-s3" type="number" id="bNum" min="0" max="255"><br>
+                    <input class="col s12" type="range" id="bVal" name="points" min="0" max="255">
+                </form>
+            </div>
+            <div  class="col s12 m2 previewContainer">
+                <div id="preview"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDkWfspxRALQHEx5fF0mk0OV6FtJt3Npqg",
+            authDomain: "ambilight-c124f.firebaseapp.com",
+            databaseURL: "https://ambilight-c124f.firebaseio.com",
+            projectId: "ambilight-c124f",
+            storageBucket: "",
+            messagingSenderId: "1095782358204"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
